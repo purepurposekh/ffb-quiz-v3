@@ -796,56 +796,192 @@ a:hover { text-decoration-color: var(--p-sage); }
 /* =========================================================
    MOBILE (≤640px)
    ========================================================= */
+/* ==========================================================
+   RESPONSIVE — rebuilt for airier mobile rhythm (v3.1)
+   Philosophy: let the page breathe. Padding bigger, not smaller,
+   on phones. Vertical gaps preferred over horizontal cramming.
+   ========================================================== */
+
 /* Prevent iOS auto-zoom on input focus — 16px minimum font-size */
 @media (max-width: 767px) {
   .capture__input { font-size: 16px; }
 }
 
+/* Tablet — stack hero, keep airy spacing */
 @media (max-width: 900px) {
-  .hero__inner { grid-template-columns: 1fr; }
-  .hero__photo { max-width: 320px; }
+  .hero__inner {
+    grid-template-columns: 1fr;
+    gap: var(--sp-8);
+    text-align: left;
+  }
+  .hero__photo {
+    max-width: 340px;
+    order: 2;
+  }
+  .hero__inner > div { order: 1; }
 }
 
+/* Phone — airy rhythm, honour 24px outer gutters, bigger vertical gaps */
 @media (max-width: 640px) {
-  .hero { padding: var(--sp-8) 0 var(--sp-9); }
-  .hero__inner { padding: 0 var(--sp-5); gap: var(--sp-6); }
-  .hero__photo { max-width: 260px; }
-  .hero__headline { font-size: clamp(32px, 8vw, 44px); }
-  .hero__sub { font-size: 16px; }
+  /* Reset sp ramp to feel LESS cramped on mobile, not more */
+  .hero {
+    padding: var(--sp-8) 0 var(--sp-9);
+  }
+  .hero__inner {
+    padding: 0 var(--sp-6);        /* was sp-5 / 24px → sp-6 / 32px */
+    gap: var(--sp-7);               /* was sp-6 / 32 → sp-7 / 48 */
+  }
+  .hero__photo {
+    max-width: 280px;
+  }
+  .hero__eyebrow {
+    font-size: 11px;
+    margin-bottom: var(--sp-4);
+  }
+  .hero__script { font-size: 38px; }
+  .hero__headline {
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.08;
+    margin-bottom: var(--sp-6);
+  }
+  .hero__sub {
+    font-size: 16px;
+    line-height: 1.65;
+    margin-bottom: var(--sp-7);     /* was sp-6 — more air before CTA */
+  }
+  .hero__meta {
+    margin-top: var(--sp-6);
+    font-size: 12px;
+  }
 
-  .pillars { padding: var(--sp-8) 0; }
-  .pillars__grid { grid-template-columns: 1fr; gap: var(--sp-4); padding: 0 var(--sp-5); }
-  .pillar-card { padding: var(--sp-5); }
-  .pillar-card__letter { font-size: 44px; }
+  /* Pillars section — bigger breathing room, wider gaps between stacked cards */
+  .pillars { padding: var(--sp-9) 0; }
+  .pillars__head {
+    margin-bottom: var(--sp-8);     /* was sp-8, keep */
+    padding: 0 var(--sp-6);
+  }
+  .pillars__grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);               /* was sp-4 / 16 → sp-5 / 24 */
+    padding: 0 var(--sp-6);
+  }
+  .pillar-card {
+    padding: var(--sp-6);           /* was sp-5 → back up to sp-6 */
+  }
+  .pillar-card__letter {
+    font-size: 48px;
+    margin-bottom: var(--sp-4);
+  }
 
-  .quiz-body { padding: var(--sp-6) var(--sp-4); }
-  .quiz-question { font-size: clamp(24px, 6vw, 32px); margin-bottom: var(--sp-6); }
-  .quiz-answer { padding: 16px 20px; font-size: 14px; }
-  .quiz-nav { padding: 0 var(--sp-4); }
+  /* Quiz — airier card, bigger question text breathing room */
+  .quiz-progress {
+    padding: var(--sp-4) 0 0;
+  }
+  .quiz-progress__meta {
+    padding: var(--sp-3) var(--sp-6);
+  }
+  .quiz-body {
+    padding: var(--sp-8) var(--sp-5);  /* was sp-6/sp-4, more vertical air */
+  }
+  .quiz-question {
+    font-size: clamp(22px, 5.5vw, 28px);
+    line-height: 1.25;
+    margin-bottom: var(--sp-8);     /* was sp-6 — let it breathe */
+  }
+  .quiz-answers {
+    gap: var(--sp-3);
+    max-width: 360px;
+  }
+  .quiz-answer {
+    padding: 18px 22px;
+    font-size: 15px;
+    min-height: 56px;
+  }
+  .quiz-nav {
+    padding: 0 var(--sp-6);
+    margin-top: var(--sp-6);
+  }
 
-  .results-hero { padding: var(--sp-8) var(--sp-5) var(--sp-7); }
-  .results-hero__title { font-size: clamp(32px, 7vw, 42px); }
+  /* Results — airier spacing around each score card */
+  .results-hero {
+    padding: var(--sp-9) var(--sp-6) var(--sp-8);
+  }
+  .results-hero__eyebrow {
+    font-size: 11px;
+    margin-bottom: var(--sp-4);
+  }
+  .results-hero__title {
+    font-size: clamp(30px, 7vw, 40px);
+    line-height: 1.08;
+  }
+  .results-hero__sub {
+    margin-top: var(--sp-5);
+    font-size: 15px;
+    line-height: 1.65;
+  }
 
-  .scores { padding: var(--sp-7) 0; }
-  .scores__grid { padding: 0 var(--sp-4); }
-  .score { padding: var(--sp-5); }
+  .scores { padding: var(--sp-9) 0; }
+  .scores__grid {
+    padding: 0 var(--sp-5);
+    gap: var(--sp-5);
+  }
+  .score {
+    padding: var(--sp-6);
+  }
+  .score__head {
+    margin-bottom: var(--sp-4);
+  }
+  .score__letter { font-size: 42px; }
+  .score__value { font-size: 28px; }
 
-  .wins { padding: var(--sp-7) 0; }
-  .wins__list { padding: 0 var(--sp-4); }
+  .wins { padding: var(--sp-9) 0; }
+  .wins__head {
+    padding: 0 var(--sp-6);
+    margin-bottom: var(--sp-7);
+  }
+  .wins__list {
+    padding: 0 var(--sp-5);
+    gap: var(--sp-4);
+  }
+  .win {
+    padding: var(--sp-5);
+    gap: var(--sp-4);
+  }
 
-  .capture { padding: var(--sp-7) var(--sp-4); }
-  .capture__form { flex-direction: column; }
-  .capture__input, .capture__submit { flex: 1 1 auto; width: 100%; }
+  .capture { padding: var(--sp-9) var(--sp-5); }
+  .capture__inner { max-width: 100%; }
+  .capture__form {
+    flex-direction: column;
+    gap: var(--sp-3);
+  }
+  .capture__input, .capture__submit {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+  .capture__note { margin-top: var(--sp-5); }
 
-  .footer { padding: var(--sp-6) var(--sp-5); }
+  .footer {
+    padding: var(--sp-7) var(--sp-5);
+    font-size: 12px;
+  }
 }
 
-/* ≤380px super tight */
+/* Narrow phone ≤380px — tighten further, NOT by reducing padding but by
+   scaling down typography + photo only. Outer gutters stay generous. */
 @media (max-width: 380px) {
-  .hero__headline { font-size: 30px; }
-  .quiz-question { font-size: 22px; }
+  .hero__inner { padding: 0 var(--sp-5); }
+  .hero__photo { max-width: 240px; }
+  .hero__headline { font-size: 28px; }
+  .hero__sub { font-size: 15px; }
+  .pillars__head, .pillars__grid { padding: 0 var(--sp-5); }
+  .quiz-body { padding: var(--sp-7) var(--sp-4); }
+  .quiz-question { font-size: 21px; }
+  .quiz-answer { padding: 16px 20px; font-size: 14px; }
+  .results-hero { padding: var(--sp-8) var(--sp-5) var(--sp-7); }
+  .results-hero__title { font-size: 28px; }
+  .scores__grid, .wins__list { padding: 0 var(--sp-4); }
   .score__letter { font-size: 36px; }
-  .score__value { font-size: 26px; }
+  .score__value { font-size: 24px; }
 }
 
 /* Focus visible everywhere */
