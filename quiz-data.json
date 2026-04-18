@@ -1,0 +1,132 @@
+{
+  "title": "FFB Business Focus Quiz",
+  "showProgressBar": "top",
+  "progressBarType": "pages",
+  "goNextPageAutomatic": true,
+  "showNavigationButtons": "bottom",
+  "pageNextText": "Next",
+  "completeText": "See My Results",
+  "showPrevButton": true,
+  "pages": [
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "build_1",
+        "title": "I have a clear, defined offer that I can explain in one sentence.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "build_2",
+        "title": "I know exactly who my right-fit client is and what keeps them up at night.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "build_3",
+        "title": "My pricing reflects the value I deliver, and I feel confident talking about it.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "sell_1",
+        "title": "I have a consistent way of attracting new leads into my world every week.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "sell_2",
+        "title": "I feel confident selling my offers without feeling pushy or salesy.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "sell_3",
+        "title": "My content regularly turns followers into paying clients.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "lead_1",
+        "title": "I have systems and processes that keep my business running smoothly, even when I step away.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "lead_2",
+        "title": "I have a team (or clear plan for one) that supports me so I am not doing everything myself.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "fresh_1",
+        "title": "My business supports the lifestyle I actually want, not the other way around.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    },
+    {
+      "elements": [{
+        "type": "rating",
+        "name": "fresh_2",
+        "title": "I feel energised and aligned in my business more days than not.",
+        "isRequired": true,
+        "rateMin": 1,
+        "rateMax": 5,
+        "minRateDescription": "Strongly Disagree",
+        "maxRateDescription": "Strongly Agree"
+      }]
+    }
+  ]
+}

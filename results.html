@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Focus Area · Tracy Harris Co</title>
+  <meta name="description" content="Your Freedom Filled Business focus area and three quick wins to start this week." />
+  <meta name="robots" content="noindex" />
+  <meta property="og:title" content="Your Focus Area · Tracy Harris Co" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" as="font" type="font/woff2" href="./assets/fonts/editors-note-regular.woff2" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.92em' font-family='Georgia' font-size='92' fill='%231e3735'>t</text><circle cx='64' cy='88' r='6' fill='%236e8e77'/></svg>" />
+</head>
+<body data-brand="ffb">
+
+  <div class="results-shell">
+
+    <section class="results-hero" aria-labelledby="results-title">
+      <p class="results-hero__eyebrow">Your focus area</p>
+      <h1 id="results-title" class="results-hero__title">
+        Your results are <em>in</em>.
+      </h1>
+      <p class="results-hero__sub">
+        Here's how your business scored across the four pillars. The card highlighted below is the one asking for your attention first.
+      </p>
+    </section>
+
+    <section class="scores" aria-label="Pillar scores">
+      <div class="scores__grid" id="scoresGrid">
+        <!-- populated by JS -->
+      </div>
+    </section>
+
+    <section class="wins" aria-labelledby="wins-title" id="winsSection" hidden>
+      <div class="wins__head">
+        <p class="eyebrow">Three quick wins</p>
+        <h2 id="wins-title" class="wins__title">Start <em>here</em>.</h2>
+        <p class="wins__sub">The first three moves to make this week in your focus area.</p>
+      </div>
+      <ul class="wins__list" id="winsList">
+        <!-- populated by JS -->
+      </ul>
+    </section>
+
+    <section class="capture" aria-labelledby="capture-title">
+      <div class="capture__inner">
+        <p class="capture__script">the next step</p>
+        <h2 id="capture-title" class="capture__title">Get the full <em>focus plan</em> in your inbox.</h2>
+        <p class="capture__sub">
+          I'll send you a deeper breakdown of your focus area, plus a couple of emails about how I help women build thriving, freedom-filled businesses. Unsubscribe any time.
+        </p>
+        <form class="capture__form" id="captureForm" novalidate>
+          <label class="sr-only" for="email" style="position:absolute;left:-9999px;">Email address</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="capture__input"
+            placeholder="your@email.com"
+            autocomplete="email"
+            required
+          />
+          <button type="submit" class="capture__submit">Send me the plan →</button>
+        </form>
+        <p class="capture__note">By signing up you agree to receive emails from Tracy Harris Co.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const PILLARS = [
+      {
+        id: 'Build',
+        letter: 'B',
+        name: 'BUILD',
+        prefix: 'build_',
+        desc: 'Your offer, your right-fit client, your pricing, your signature framework.',
+        focusDesc: 'Your offer foundation is where to focus first. Get clear on who you serve, what you solve, and how you talk about it, and every other pillar gets easier.',
+        wins: [
+          'Write your offer in one sentence: "I help [person] go from [before] to [after] through [method]." Say it out loud. Refine until it feels obvious.',
+          'Choose one right-fit client. Describe their Tuesday morning, what they Google at 2am, what they\'ve tried before. Specific beats generic.',
+          'Audit your pricing page against the offer clarity. If there\'s a gap between what you deliver and what you\'re charging, close it this week.'
+        ]
+      },
+      {
+        id: 'Sell',
+        letter: 'S',
+        name: 'SELL',
+        prefix: 'sell_',
+        desc: 'Lead flow, conversion, launches vs evergreen. Whether revenue arrives on purpose.',
+        focusDesc: 'Selling is the gap between starting and thriving. Not pushier, not louder, just more consistent. This is where you build the muscle.',
+        wins: [
+          'Map your one reliable lead source. Name it. If you can\'t name it, that\'s the first move. Pick one channel and commit for 90 days.',
+          'Write down your conversion path from first touch to sale. Every step. Spot the break point. That\'s where the next dollar lives.',
+          'Choose launch or evergreen for the next 90 days. Pick one, commit to it, don\'t hedge. Clarity of model beats clever hybrid.'
+        ]
+      },
+      {
+        id: 'Lead',
+        letter: 'L',
+        name: 'LEAD',
+        prefix: 'lead_',
+        desc: 'Systems, team, onboarding. How your business runs without you as the bottleneck.',
+        focusDesc: 'You\'ve built and you\'re selling, but every decision still goes through you. Leading is the pillar that makes your business scalable and you sustainable.',
+        wins: [
+          'Document one workflow this week. Pick the thing you do most often and write the SOP as you do it. Next week, hand it off.',
+          'List every decision you made this week. Mark the ones that could be made by someone else, a tool, or a checklist. That\'s your delegation list.',
+          'Audit your calendar. How many hours are on high-value work vs busywork? If it\'s less than 60% high-value, there\'s your leak.'
+        ]
+      },
+      {
+        id: 'F.R.E.S.H.',
+        letter: 'F',
+        name: 'F.R.E.S.H.',
+        prefix: 'fresh_',
+        desc: 'Fitness, relationships, environment, self, hustle. The life the business serves.',
+        focusDesc: 'The business is there to serve the life, not the other way around. When F.R.E.S.H. slips, the business does too. This is the foundation that holds everything.',
+        wins: [
+          'Block one non-negotiable hour this week for something that\'s yours alone. Not work, not family, just you. Defend it.',
+          'Name one relationship that\'s drained you this season and one that\'s filled you up. Spend more time with the filler, less with the drainer.',
+          'Look at your calendar for next week through the lens of "is this the life I actually want?" If the answer is no, change one thing. One is enough.'
+        ]
+      }
+    ];
+
+    function getAnswers() {
+      // Try sessionStorage first, fall back to URL hash (private-mode Safari)
+      try {
+        const raw = sessionStorage.getItem('ffb-quiz-v3-final');
+        if (raw) return JSON.parse(raw);
+      } catch (e) { /* ignore */ }
+
+      const hash = window.location.hash;
+      if (hash && hash.indexOf('#a=') === 0) {
+        try {
+          const encoded = decodeURIComponent(hash.slice(3));
+          return JSON.parse(atob(encoded));
+        } catch (e) { return null; }
+      }
+      return null;
+    }
+
+    function computeScores(answers) {
+      return PILLARS.map(function (p) {
+        let sum = 0, count = 0;
+        Object.keys(answers).forEach(function (k) {
+          if (k.indexOf(p.prefix) === 0) {
+            sum += answers[k];
+            count += 1;
+          }
+        });
+        const avg = count === 0 ? 0 : sum / count;
+        const pct = Math.round((avg / 5) * 100);
+        return Object.assign({}, p, { avg: avg, pct: pct, count: count });
+      });
+    }
+
+    function render() {
+      const answers = getAnswers();
+      const grid = document.getElementById('scoresGrid');
+      const winsSection = document.getElementById('winsSection');
+      const winsList = document.getElementById('winsList');
+
+      if (!answers || Object.keys(answers).length === 0) {
+        grid.innerHTML = '<p style="text-align:center;color:var(--ink-mute);padding:48px 0;">No quiz data found. <a href="quiz.html">Take the quiz first</a>.</p>';
+        return;
+      }
+
+      const scores = computeScores(answers);
+      // Focus area = lowest score (tie-break by list order)
+      const focus = scores.reduce(function (a, b) { return b.pct < a.pct ? b : a; }, scores[0]);
+      focus.isFocus = true;
+
+      grid.innerHTML = '';
+      // Render in pillar order (Build, Sell, Lead, FRESH)
+      scores.forEach(function (s) {
+        const card = document.createElement('article');
+        card.className = 'score' + (s.isFocus ? ' score--focus' : '');
+        card.innerHTML = `
+          <div class="score__head">
+            <span class="score__letter">${s.letter}</span>
+            <span class="score__name">${s.name}</span>
+            <span class="score__value">${s.pct}%</span>
+          </div>
+          <div class="score__bar"><div class="score__bar-fill" style="width:0"></div></div>
+          <p class="score__desc">${s.isFocus ? s.focusDesc : s.desc}</p>
+        `;
+        grid.appendChild(card);
+      });
+
+      // Animate bars after paint — setTimeout 60ms is more reliable than
+      // double-rAF for bars on newly-injected DOM. prefers-reduced-motion
+      // users skip the animation entirely and see final state immediately.
+      const animate = function () {
+        document.querySelectorAll('.score').forEach(function (el, i) {
+          const fill = el.querySelector('.score__bar-fill');
+          if (fill) fill.style.width = scores[i].pct + '%';
+        });
+      };
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        animate();
+      } else {
+        setTimeout(animate, 60);
+      }
+
+      // Wins
+      winsSection.hidden = false;
+      winsList.innerHTML = '';
+      focus.wins.forEach(function (w, i) {
+        const li = document.createElement('li');
+        li.className = 'win';
+        li.innerHTML = `
+          <span class="win__num" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span>
+          <p class="win__text">${w}</p>
+        `;
+        winsList.appendChild(li);
+      });
+
+      // Save focus for AC / email capture
+      window.__ffbFocus = focus;
+    }
+
+    // Handle email capture
+    document.getElementById('captureForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        document.getElementById('email').focus();
+        return;
+      }
+      // Stub: POST to AC endpoint when ready.
+      // For now, show a confirmation state.
+      const form = e.currentTarget;
+      form.innerHTML = '<p style="color:var(--p-oatmeal);font-size:16px;margin:0;">On the way. Check your inbox in the next few minutes.</p>';
+    });
+
+    render();
+  </script>
+</body>
+</html>
